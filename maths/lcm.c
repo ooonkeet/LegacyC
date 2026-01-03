@@ -6,6 +6,10 @@ int main(){
     printf("Enter number 2:- ");
     scanf("%d",&b);
     maximum=(a>b)?a:b;
+/*
+
+------------ALTERNATE INFINTE LOOP VERSION----------------------
+
     while(1){
         if(maximum%a==0 && maximum%b==0){
             printf("LCM of %d and %d is = %d.",a,b,maximum);
@@ -13,5 +17,15 @@ int main(){
         }
         maximum++;
     }
+-----------------------------------------------------------------
+
+*/
+    for(maximum=(a>b?a:b);maximum<=a*b;maximum++){
+        if(maximum%a==0 && maximum%b==0){
+            printf("LCM of %d and %d is = %d.",a,b,maximum);
+            break;
+        }
+    }
+
     return 0;
 }
