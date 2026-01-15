@@ -1,0 +1,35 @@
+#include<stdio.h>
+void input(int row,int col,int mat[row][col]){
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            printf("Enter element (%d,%d):- ",i+1,j+1);
+            scanf("%d",&mat[i][j]);
+        }
+    }
+}
+void display(int row,int col,int mat[row][col]){
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            printf("%d\t",mat[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main(){
+    int m,n;
+    printf("Enter row number of matrix:- ");
+    scanf("%d",&m);
+    printf("Enter column number of matrix:- ");
+    scanf("%d",&n);
+    int x[m][n],y[n][m];
+    printf("Enter the values of matrix.\n");
+    input(m,n,x);
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            y[j][i]=x[i][j];
+        }
+    }
+    printf("\nTransposed matrix:-\n");
+    display(n,m,y);
+    return 0;
+}
